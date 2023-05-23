@@ -3,20 +3,7 @@ const {createApp} = Vue;
 createApp({
   data(){
    return{
-    tasks:[
-      {
-        text:'Comprare il pollo',
-        done: false
-      },
-      {
-        text:'Comprare l\'insalata ',
-        done: false
-      },
-      {
-        text:'Comprare il pane',
-        done: false
-      },
-    ],
+    tasks:[],
     errorMsg:'',
     newTaskString:''
    }

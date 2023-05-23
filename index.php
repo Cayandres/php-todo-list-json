@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,8 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/esm/axios.min.js' integrity='sha512-GDviEqpkwOmJCn995sf39yb0OnAa6uFvXPAV3M01ZZXUKL99sJqXZptxC+bZBVkeQieUzJdsCghZdJT2vx8jOg==' crossorigin='anonymous'></script>
 
-  <title>Spesa</title>
+  <title>Spesa in PHP</title>
 </head>
 <body>
 
@@ -30,12 +35,8 @@
      </div>
      
      <div class="container">
-       
-       <h2 v-if="tasks.length === 0">Non ci sono task 
-         <i class="fa-solid fa-face-smile"></i>
-        </h2>
 
-      <ul v-else class = "tasks-list">
+      <ul class = "tasks-list">
         
         <li v-for="(task, index) in tasks" :class="{'done': task.done}" @click="task.done = !task.done">
           <span>{{task.text}}</span>
@@ -43,6 +44,7 @@
           <i @click.stop="removeTask(index)" class="fa-solid fa-trash"></i>
         </li>
         
+      </ul>  
       </div>
       
     </div>
