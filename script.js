@@ -4,9 +4,8 @@ createApp({
   data(){
    return{
     apiUrl: 'server.php',
-    tasks:[],
-    errorMsg:'',
-    newTaskString:''
+    list:[],
+    newTask:''
    }
   },
 
@@ -14,9 +13,22 @@ createApp({
 
     getApi(){
       axios.get(this.apiUrl) .then(result => {
-        this.tasks = result.data;
+        this.list = result.data;
       })
     },
+
+    addTask(){
+      const data = new FormData();
+          data.append('todoItem', this.newTask);
+
+           axios.post(this.apiUrl, data)
+           .then(result => {
+            this.newTask = '';
+            this.list = result.data;
+      })
+      this.newTask = '';
+
+  }
   },
   mounted() {
     this.getApi();

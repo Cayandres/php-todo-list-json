@@ -27,15 +27,15 @@
     </div>
     
     <div class="input-area">
-      <input type="text" placeholder="Aggiungi una cosa">
-      <button>Aggiungi</button>
+      <input v-model.trim="newTask" @keyup.enter="addTask" type="text" placeholder="Aggiungi una cosa">
+      <button @click="addTask" type="button">Aggiungi</button>
      </div>
      
      <div class="container">
 
       <ul class = "tasks-list">
         
-        <li v-for="(task, index) in tasks" :key="index">
+        <li v-for="(task, index) in list" :key="index">
           <span>{{task.text}}</span>
           
           <i class="fa-solid fa-trash"></i>
